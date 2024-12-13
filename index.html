@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Article Generator</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/slider.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/article.css">
+    <script src="js/auth/authGuard.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Article Generator</h1>
+            <p class="subtitle">Generate SEO-optimized articles and images with AI</p>
+            <button id="logoutBtn" class="logout-button">
+                <span class="icon">🚪</span> Logout
+            </button>
+        </header>
+
+        <main>
+            <form id="articleForm" class="form-container">
+                <div class="form-group">
+                    <label for="apiKey">OpenAI API Key:</label>
+                    <input type="password" id="apiKey" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Article Title:</label>
+                    <input type="text" id="title" required placeholder="Enter article title">
+                </div>
+
+                <div class="form-group">
+                    <label for="language">Language:</label>
+                    <select id="language" required>
+                        <option value="English">English</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="voice">Writing Voice:</label>
+                    <select id="voice" required>
+                        <option value="Professional">Professional</option>
+                        <option value="Casual">Casual</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Creative">Creative</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="wordCount">Word Count: <span id="wordCountValue">500</span></label>
+                    <div class="slider-container">
+                        <input 
+                            type="range" 
+                            id="wordCount" 
+                            min="100" 
+                            max="2000" 
+                            value="500" 
+                            step="50"
+                            class="slider"
+                            required
+                        >
+                        <div class="slider-labels">
+                            <span>100</span>
+                            <span>2000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    <span class="button-icon">✨</span>
+                    Generate Article & Image
+                </button>
+            </form>
+
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Generating content...</p>
+            </div>
+
+            <div id="resultContainer" class="result-container">
+                <div id="seoScoreContainer" class="seo-score-container"></div>
+                <div id="imageContainer" class="image-container"></div>
+                <div id="articleContainer" class="article-container"></div>
+                <div id="seoAnalysis" class="seo-analysis"></div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI Article Generator</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Please enter your license code to continue</p>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="licenseCode">License Code</label>
+                    <input 
+                        type="text" 
+                        id="licenseCode" 
+                        required 
+                        minlength="5"
+                        placeholder="Enter your license code"
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                </div>
+                <button type="submit" class="login-button">
+                    <span class="button-text">Verify License</span>
+                    <div class="button-loader"></div>
+                </button>
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+    <script src="js/login.js" type="module"></script>
+</body>
+</html>
